@@ -43,6 +43,14 @@
     if ($('.total').text() === "0") {
       $(".checkout").css('display', 'none');
     }
+
+    $(".thumbnails").on("click", "a", function(e){
+      e.preventDefault();
+      $(".thumbnails .product").removeClass("active");
+      $(this).addClass("active");
+      $(".product.full_view img").attr("src", $(this).find("img").attr("src"));
+    });
+
     return $(document).keyup(function(e) {
       if (e.keyCode === 27) {
         $('.modal').removeClass('modal_open');

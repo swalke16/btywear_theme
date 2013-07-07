@@ -7,7 +7,7 @@
   {% if product.images.size > 1 %}
     <div class="thumbnails">
       {% for image in product.images %}
-        <a class="product thumbnail_view" href="{{ image | product_img_url: 'master' }}" target="_blank">
+        <a class="product thumbnail_view {% if forloop.first %}active{% endif %}" href="{{ image | product_img_url: 'master' }}" target="_blank">
           <img src="{{ image | product_img_url: 'master' }}" alt="{{ image.alt | escape }}" />
         </a>
       {% endfor %}
@@ -40,15 +40,11 @@
       <input type="submit" id="add-to-cart" class="button add_button" name="add" value="ADD TO CART" />
       {% endunless %}
 
-      {% if collection %}
-        <span class="separator">&raquo;</span>
-        {% if collection.handle %}
-           {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
-        {% else %}
-           {% capture url %}{{ shop.url }}{% endcapture %}
-        {% endif %}
-      {% endif %}
-      <!-- TODO: where does this go -->
+
+      <!-- TODO: is there a better way to get the page to return to?  -->
+      {% for collection in product.collections limit:2 %}
+         {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+      {% endfor %}
       <a class="button return_button" href="{{ url }}">RETURN TO LIST</a>
 
     </form>
@@ -72,7 +68,7 @@
   };
 
   // initialize multi selector for product
-  jQuery(function() {
+  $(function() {
     new Shopify.OptionSelectors("product-select", { product: {{ product | json }}, onVariantSelected: optionsSelectortCallback });
 
     // select first available variant
