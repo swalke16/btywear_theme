@@ -1,0 +1,12 @@
+<section class="home_page">
+  <h1 class="message">All Gas. No Brake.</h1>
+
+  {% for product in collections.frontpage.products limit:2 %}
+    {% include 'product-display' %}
+  {% endfor %}
+
+  <!-- TODO: featured product -->
+  <a class="product featured" href="">
+    <img src="{{ 'pigs.jpg' | asset_url }}" />
+  </a>
+</section>

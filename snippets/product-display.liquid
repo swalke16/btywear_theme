@@ -1,0 +1,5 @@
+<a class="product {{ product.handle }}" href="{{ product.url }}">
+  <img src="{{ product.featured_image | product_img_url: 'master' }}" alt="{{ product.title | escape  }}" />
+  <div class="price">{% include 'product-price' %}</div>
+  <div class="product_text">{{ product.title }}</div>
+</a>

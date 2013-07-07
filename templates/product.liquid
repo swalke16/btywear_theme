@@ -1,0 +1,82 @@
+<section class="item_page">
+  <div class="product full_view">
+    <img src="{{ product.featured_image | product_img_url: 'master' }}" alt="{{ product.title | escape  }}" />
+    <div class="full_view_price">{{ include 'product-price' }}</div>
+  </div>
+
+  {% if product.images.size > 1 %}
+    <div class="thumbnails">
+      {% for image in product.images %}
+        <a class="product thumbnail_view" href="{{ image | product_img_url: 'master' }}" target="_blank">
+          <img src="{{ image | product_img_url: 'master' }}" alt="{{ image.alt | escape }}" />
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="item_details">
+    <h2>{{ product.title }}</h2>
+    <p> {{ product.description }} </p>
+
+    <form id="add-item-form" action="/cart/add" method="post" class="variants">
+      <!-- Begin product options -->
+      <div class="options">
+
+        <div class="select clearfix"{% if hide_default_title %} style="display:none"{% endif %}>
+          <select id="product-select" name="id">
+            {% for variant in product.variants %}
+            <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <h6>QUANTITY</h6>
+        <input type="text" class="quantity" name="search" value="1" />
+      </div>
+
+      {% unless product.available %}
+      <p>Sold Out</p>
+      {% else %}
+      <input type="submit" id="add-to-cart" class="add_button" name="add" value="ADD TO CART" />
+      {% endunless %}
+      <!-- TODO: where does this go -->
+      <a class="return_button" href="#">RETURN TO LIST</a>
+
+    </form>
+
+  </div>
+
+</section>
+
+<script type="text/javascript">
+  var optionsSelectortCallback = function(variant, selector) {
+    if (variant && variant.available == true) {
+      // selected a valid variant
+      jQuery('#add-to-cart').removeClass('disabled').removeAttr('disabled'); // remove unavailable class from add-to-cart button, and re-enable button
+      jQuery('.full_view_price').html(Shopify.formatMoney(variant.price, "{{shop.money_with_currency_format}}"));  // update price field
+    } else {
+      // variant doesn't exist
+      jQuery('#add-to-cart').addClass('disabled').attr('disabled', 'disabled');      // set add-to-cart button to unavailable class and disable button
+      var message = variant ? "Sold Out" : "Unavailable";
+      jQuery('.full_view_price').text(message);
+    }
+  };
+
+  // initialize multi selector for product
+  jQuery(function() {
+    new Shopify.OptionSelectors("product-select", { product: {{ product | json }}, onVariantSelected: optionsSelectortCallback });
+
+    // select first available variant
+    {% assign found_one_in_stock = false %}
+    {% for variant in product.variants %}
+      {% if variant.available and found_one_in_stock == false %}
+        {% assign found_one_in_stock = true %}
+        {% for option in product.options %}
+        jQuery('.single-option-selector:eq({{ forloop.index0 }})').val({{ variant.options[forloop.index0] | json }}).trigger('change');
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+
+    $(".item_page select:visible").select2();
+  });
+</script>
