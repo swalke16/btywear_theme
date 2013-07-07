@@ -3,17 +3,30 @@
   $(function() {
     $('.sign_in').click(function(e) {
       e.preventDefault();
-      $('.modal').css('display', 'block');
+      $('.modal.login').css('display', 'block');
       return setTimeout(function() {
-        return $('.modal').addClass('modal_open');
+        return $('.modal.login').addClass('modal_open');
       }, 1);
     });
     $('.cancel_button').click(function() {
-      $('.modal').removeClass('modal_open');
+      $('.modal.login').removeClass('modal_open');
       return setTimeout(function() {
-        return $('.modal').css('display', 'none');
+        return $('.modal.login').css('display', 'none');
       }, 300);
     });
+    $('.sign_up').click(function(e) {
+      e.preventDefault();
+      $('.modal.signup').css('display', 'block');
+      return setTimeout(function() {
+        return $('.modal.signup').addClass('modal_open');
+      }, 1);
+    });
+    // $('.cancel_button').click(function() {
+    //   $('.modal.signup').removeClass('modal_open');
+    //   return setTimeout(function() {
+    //     return $('.modal.signup').css('display', 'none');
+    //   }, 300);
+    // });
     $('nav a.affiliates_link').click(function(e) {
       e.preventDefault();
       $('.dropdown').toggleClass('dropdown_open');
@@ -45,6 +58,9 @@
 $(document).ready(function(){
   if ($(".login_page").length > 0) {
     $(".sign_in").click();
+  }
+  if ($(".register").length > 0) {
+    $(".sign_up").click();
   }
 });
 

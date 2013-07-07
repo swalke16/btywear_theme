@@ -1,6 +1,7 @@
 {% if shop.customer_accounts_enabled %}
   {% if customer  %}
-    <a class="sign_in" href="/account">My Account</a>
+    <a class="my_account" href="/account">My Account</a>
+    <a class="logout" href="/account/logout">Logout</a>
   {% else %}
     <a class="sign_in" href="/account/login">Sign In</a>
     <a class="sign_up" href="/account/register">Sign Up</a>

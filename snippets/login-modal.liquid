@@ -1,4 +1,4 @@
-<div class="modal">
+<div class="modal login">
   <div class="modal_box">
     <div class="modal_logo"></div>
       <h2>Sign Into Your Account</h2>
@@ -10,6 +10,8 @@
 
         {% if form.password_needed %}
           <input class="modal_input" type="password" name="customer[password]" id="customer_password" placeholder="Password" />
+          <a href="#" onclick="showRecoverPasswordForm();return false;">Forgot your password?</a>
+
           <!-- TODO: recover password -->
         {% endif %}
 

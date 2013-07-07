@@ -39,6 +39,7 @@
 
 <body>
   {% include 'login-modal' %}
+  {% include 'register-modal' %}
 
   <!-- Begin header -->
   <div class="dropdown">
@@ -62,7 +63,7 @@
           {% endfor %}
           <a class="checkout" href="/cart" title="Shopping Cart">
             <div class="cart"></div>
-            <div class="total">
+            <div class="cart_total">
               {{ cart.item_count }}
             </div>
           </a>
