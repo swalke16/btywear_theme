@@ -25,7 +25,7 @@
         <div class="select clearfix"{% if hide_default_title %} style="display:none"{% endif %}>
           <select id="product-select" name="id">
             {% for variant in product.variants %}
-            <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+            <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money | replace: '.00', '' }}</option>
             {% endfor %}
           </select>
         </div>
@@ -39,7 +39,6 @@
       {% else %}
       <input type="submit" id="add-to-cart" class="button add_button" name="add" value="ADD TO CART" />
       {% endunless %}
-
 
       <!-- TODO: is there a better way to get the page to return to?  -->
       {% for collection in product.collections limit:2 %}
@@ -57,13 +56,13 @@
   var optionsSelectortCallback = function(variant, selector) {
     if (variant && variant.available == true) {
       // selected a valid variant
-      jQuery('#add-to-cart').removeClass('disabled').removeAttr('disabled'); // remove unavailable class from add-to-cart button, and re-enable button
-      jQuery('.full_view_price').html(Shopify.formatMoney(variant.price, "{{shop.money_with_currency_format}}"));  // update price field
+      $('#add-to-cart').removeClass('disabled').removeAttr('disabled'); // remove unavailable class from add-to-cart button, and re-enable button
+      $('.full_view_price').html(Shopify.formatMoney(variant.price).replace(/\.00/g, ""));  // update price field
     } else {
       // variant doesn't exist
-      jQuery('#add-to-cart').addClass('disabled').attr('disabled', 'disabled');      // set add-to-cart button to unavailable class and disable button
+      $('#add-to-cart').addClass('disabled').attr('disabled', 'disabled');      // set add-to-cart button to unavailable class and disable button
       var message = variant ? "Sold Out" : "Unavailable";
-      jQuery('.full_view_price').text(message);
+      $('.full_view_price').text(message);
     }
   };
 
@@ -77,7 +76,7 @@
       {% if variant.available and found_one_in_stock == false %}
         {% assign found_one_in_stock = true %}
         {% for option in product.options %}
-        jQuery('.single-option-selector:eq({{ forloop.index0 }})').val({{ variant.options[forloop.index0] | json }}).trigger('change');
+        $('.single-option-selector:eq({{ forloop.index0 }})').val({{ variant.options[forloop.index0] | json }}).trigger('change');
         {% endfor %}
       {% endif %}
     {% endfor %}

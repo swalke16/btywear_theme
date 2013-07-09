@@ -1,12 +1,12 @@
 {% if product.available %}
   {% if product.compare_at_price_max > product.price %}
-    <del>{{ product.compare_at_price | money }}</del>
+    <del>{{ product.compare_at_price | money | replace: '.00', '' }}</del>
   {% endif %}
   {% if product.price_varies %}
   <small><em>from</em></small>
   {% endif %}
-  {{ product.price | money }}
+  {{ product.price | money | replace: '.00', '' }}
 {% else %}
-  {{ product.price | money }} Sold Out
+  {{ product.price | money | replace: '.00', '' }} Sold Out
 {% endif %}
 
