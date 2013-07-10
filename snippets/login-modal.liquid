@@ -10,7 +10,7 @@
 
         {% if form.password_needed %}
           <input class="modal_input" type="password" name="customer[password]" id="customer_password" placeholder="Password" />
-          <a href="#" onclick="showRecoverPasswordForm();return false;">Forgot your password?</a>
+          <a class="i-forgot" href="#" onclick="showRecoverPasswordForm();return false;">Forgot your password?</a>
 
           <!-- TODO: recover password -->
         {% endif %}
