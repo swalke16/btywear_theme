@@ -1,9 +1,7 @@
 <div class="modal signup">
   <div class="modal_box">
     <div class="modal_logo"></div>
-    <div id="customer-register">
-  <div class="row">
-    <div id="register" class="span12">
+    <div id="signup_container">
       <h2 class="title">Create Account</h2>
 
       {% form 'create_customer' %}
@@ -30,15 +28,10 @@
           <input type="password" value="" name="customer[password]" id="password" class="password text" size="30" />
         </div>
 
-        <div class="action_bottom">
-          <input class="btn" type="submit" value="Create" />
-          <span class="note">or <a href="{{ shop.url }}">Return to Store</a></span>
-        </div>
+        <a class="button cancel_button" href="{{ shop.url }}">CANCEL</a>
+        <input class="button" type="submit" value="CREATE" />
 
       {% endform %}
-
-    </div><!-- #register -->
-  </div><!-- .row -->
-</div><!-- #customer-register -->
+    </div>
   </div>
 </div>
