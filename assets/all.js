@@ -24,6 +24,7 @@
         return $('.modal.signup').addClass('modal_open');
       }, 1);
     });
+
     $('#signup_container .cancel_button').click(function(e) {
       e.preventDefault();
 
@@ -32,19 +33,13 @@
         return $('.modal.signup').css('display', 'none');
       }, 300);
     });
+
     $('nav a.affiliates_link').click(function(e) {
       e.preventDefault();
       $('.dropdown').toggleClass('dropdown_open');
       return $(this).toggleClass('selected');
     });
-    $('.color').click(function() {
-      $(this).siblings().addClass('fade');
-      return $(this).removeClass('fade');
-    });
-    $('.sizes').click(function() {
-      $(this).siblings().addClass('fade');
-      return $(this).removeClass('fade');
-    });
+
     if ($('.total').text() === "0") {
       $(".checkout").css('display', 'none');
     }
@@ -56,12 +51,14 @@
       $(".product.full_view img").attr("src", $(this).find("img").attr("src"));
     });
 
-    $("#recover_password_container").on("click", ".cancel_button", function(){
+    $("#recover_password_container").on("click", ".cancel_button", function(e){
+      e.preventDefault();
       $("#recover_password_container").hide();
       $("#login_container").show();
     });
 
-    $("#login_container").on("click", "#forgot_password", function(){
+    $("#login_container").on("click", "#forgot_password", function(e){
+      e.preventDefault();
       $("#recover_password_container").show();
       $("#login_container").hide();
     });
@@ -82,6 +79,7 @@ $(document).ready(function(){
   if ($(".login_page").length > 0) {
     $(".sign_in").click();
   }
+
   if ($(".register").length > 0) {
     $(".sign_up").click();
   }
