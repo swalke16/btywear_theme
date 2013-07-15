@@ -23,7 +23,7 @@ body {
   opacity: 1;
   background: no-repeat;
   background-color: #111111;
-  background-size: cover;
+  background-size: 100%;
   background-position: 50% 0;
   background-image: url({{'bg.jpg' | asset_url}});
   -webkit-animation: fade-in 1s 1;
@@ -63,7 +63,7 @@ h1 {
   font-size: 80px;
   font-weight: bold;
   color: white;
-  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4); }
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6); }
 
 /* line 42, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 h2 {
@@ -201,7 +201,7 @@ header {
   width: 100%;
   height: 50px;
   position: relative;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
   float: right;
   border-radius: 1px;
   border-top-right-radius: 0; }
@@ -448,6 +448,7 @@ section {
   width: 90%;
   max-width: 890px;
   margin: auto;
+  min-height: 440px;
   *zoom: 1; }
   /* line 18, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/bourbon/addons/_clearfix.scss */
   section:before, section:after {
@@ -490,17 +491,20 @@ section {
 
 /* line 136, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .home_page {
-  margin: 120px auto 10px; }
+  margin: 120px auto 10px;
+  min-height: 0; }
 
 /* line 139, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .product {
   position: relative;
-  opacity: 0.6;
+  opacity: 0.9;
   width: 25%;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
   max-width: 220px;
   max-height: 190px;
   margin: 0 3% 30px 0;
   float: left;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
   display: block;
   overflow: hidden;
   border: 5px solid rgba(238, 238, 238, 0.7);
@@ -570,7 +574,7 @@ footer {
   height: 30px;
   max-width: 960px;
   background: rgba(51, 51, 51, 0.4);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
   margin: 0 auto 30px;
   border-radius: 1px;
   padding: 3px 0 0; }
@@ -581,7 +585,7 @@ footer {
     text-align: center;
     text-shadow: 0 -1px 0 #0d0d0d;
     display: inline-block;
-    opacity: 0.4;
+    opacity: 0.6;
     color: rgba(238, 238, 238, 0.4);
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
