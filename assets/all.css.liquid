@@ -60,7 +60,7 @@ body {
 /* line 35, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 h1 {
   margin: 0;
-  font-size: 80px;
+  font-size: 60px;
   font-weight: bold;
   color: white;
   text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6); }
@@ -80,15 +80,17 @@ h6 {
 
 /* line 53, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 p {
-  color: rgba(238, 238, 238, 0.7);
+  color: white;
   font-size: 14px;
   font-weight: lighter;
   position: relative;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6);
   margin: 0 0 6px 0; }
 
 /* line 60, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #eb4848; }
 
 /* line 63, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .modal_logo {
@@ -140,7 +142,7 @@ a {
     text-align: center; }
 
 /* line 100, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
-.cancel_button, .login_button {
+.cancel_button, .login_button, .create_button {
   position: absolute;
   bottom: 40px; }
 
@@ -149,7 +151,7 @@ a {
   left: 40px; }
 
 /* line 107, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
-.login_button {
+.login_button, .create_button {
   right: 40px; }
 
 /* line 110, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
@@ -181,6 +183,14 @@ header {
     /* line 14, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
     header a:hover {
       color: #eeeeee; }
+
+.details {
+  margin: 40px 0;
+}
+
+.p1, .s1 {
+  color: white;
+}
 
 /* line 17, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
 .sign_in, .sign_up, .logout, .my_account {
@@ -438,8 +448,9 @@ nav {
 
 /* line 115, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .container {
-  width: 96%;
-  max-width: 960px;
+  /*width: 96%;*/
+  /*max-width: 960px;*/
+  width: 960px;
   margin: auto;
   position: relative; }
 
@@ -448,7 +459,7 @@ section {
   width: 90%;
   max-width: 890px;
   margin: auto;
-  min-height: 440px;
+  /*min-height: 385px;*/
   *zoom: 1; }
   /* line 18, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/bourbon/addons/_clearfix.scss */
   section:before, section:after {
@@ -463,6 +474,7 @@ section {
   -webkit-animation: enter 1s 1;
   -moz-animation: enter 1s 1;
   animation: enter 1s 1;
+  font-size: 80px;
   opacity: 1; }
 
 @-webkit-keyframes enter {
@@ -776,6 +788,7 @@ input[type="password"] {
 
 /* line 355, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .cart_page {
+  min-height: 400px;
   margin: 30px auto 10px; }
 
 /* line 358, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
@@ -821,11 +834,16 @@ input[type="password"] {
     display: inline-block;
     margin: 4px 16px 0 0; }
 
+.size_box {
+  margin-bottom: 8px; }
+
+
 /* line 390, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .cart_price {
   padding: 28px 15px 0 0;
   float: right;
   position: relative;
+  font-size: 26px;
   top: 21px; }
 
 /* line 396, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
@@ -837,7 +855,7 @@ input[type="password"] {
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
-  opacity: 0.3;
+  opacity: 0.4;
   float: left;
   position: relative;
   top: 6px; }
@@ -924,6 +942,7 @@ input[type="password"] {
   position: relative;
   bottom: 5px;
   margin: 0 20px 0 0;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6);
   color: #eeeeee; }
 
 .login_page {
