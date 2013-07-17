@@ -142,13 +142,17 @@ a {
     text-align: center; }
 
 /* line 100, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
-.cancel_button, .login_button, .create_button {
+.cancel_button, .login_button, .create_button, .guest_login_button {
   position: absolute;
   bottom: 40px; }
 
 /* line 104, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .cancel_button {
   left: 40px; }
+
+.guest_login_button {
+  left: 145px;
+}
 
 /* line 107, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .login_button, .create_button {
@@ -682,23 +686,23 @@ footer {
   background: purple; }
 
 /* line 272, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
-input {
+input, textarea {
   background: rgba(238, 238, 238, 0.5);
   outline: none;
   border: none;
   border-radius: 1px;
   padding: 2px 4px 0; }
   /* line 8, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/bourbon/css3/_placeholder.scss */
-  input::-webkit-input-placeholder {
+  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     color: rgba(51, 51, 51, 0.4); }
   /* line 14, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/bourbon/css3/_placeholder.scss */
-  input:-moz-placeholder {
+  input:-moz-placeholder, textarea:-moz-placeholder {
     color: rgba(51, 51, 51, 0.4); }
   /* line 19, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/bourbon/css3/_placeholder.scss */
-  input::-moz-placeholder {
+  input::-moz-placeholder, textarea::-moz-placeholder {
     color: rgba(51, 51, 51, 0.4); }
   /* line 24, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/bourbon/css3/_placeholder.scss */
-  input:-ms-input-placeholder {
+  input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color: rgba(51, 51, 51, 0.4); }
 
 /* line 282, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
@@ -949,3 +953,6 @@ input[type="password"] {
   min-height: 400px;
 }
 
+.errorForm p, .errors {
+  color: #eb4848;
+}

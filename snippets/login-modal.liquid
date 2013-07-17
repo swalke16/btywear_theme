@@ -1,6 +1,13 @@
 <div class="modal login">
   <div class="modal_box">
     <div class="modal_logo"></div>
+
+    {% if shop.checkout.guest_login %}
+      {% form 'guest_login' %}
+      <input class="button guest_login_button" type="submit" value="GUEST LOGIN" />
+      {% endform %}
+    {% endif %}
+
     <div id="login_container">
       <h2>Sign Into Your Account</h2>
 
@@ -34,14 +41,5 @@
       {% endform %}
     </div>
 
-    <!-- TODO: do we need this? -->
-    {% if shop.checkout.guest_login %}
-    <div id="guest" class="span5">
-      <h2>Guest Login</h2>
-      {% form 'guest_login' %}
-      <input class="btn" type="submit" value="Continue as Guest" />
-      {% endform %}
-    </div>
-    {% endif %}
   </div>
 </div>
