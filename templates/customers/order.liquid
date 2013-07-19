@@ -1,5 +1,5 @@
 {% layout settings.customer_layout %}
-<div id="customer-order">
+<section id="customer-order">
   <div class="row">
     <div class="span12">
       <h1>Order {{ order.name }} <span class="note order_date">&mdash; {{ order.created_at | date: "%b %d, %Y %I:%M%p" }}</span></h1>
@@ -105,4 +105,4 @@
     </div>
   </div>
 
-</div>
+</section>

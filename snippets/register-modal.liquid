@@ -4,6 +4,7 @@
     <div id="signup_container">
       <h2 class="title">Create Account</h2>
 
+      <!-- TODO: error styling -->
       {% form 'create_customer' %}
 
         {{ form.errors | default_errors }}
@@ -20,12 +21,12 @@
 
         <div id="email" class="clearfix large_form">
           <label for="email" class="label"></label>
-          <input type="email" value="" name="customer[email]" id="email" class="modal_input" size="30" placeholder="Email Address"  />
+          <input type="email" value="" name="customer[email]" id="email" class="modal_input {% if form.errors.messages['email'] %}error{% endif %}" size="30" placeholder="Email Address" />
         </div>
 
         <div id="password" class="clearfix large_form">
           <label for="password" class="label"></label>
-          <input type="password" value="" name="customer[password]" id="password" class="modal_input" size="31" placeholder="Password" />
+          <input type="password" value="" name="customer[password]" id="password" class="modal_input {% if form.errors.messages['password'] %}error{% endif %}" size="31" placeholder="Password" />
         </div>
 
         <a class="button cancel_button" href="{{ shop.url }}">CANCEL</a>
