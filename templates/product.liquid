@@ -7,7 +7,7 @@
   <div class="thumbnails">
     {% for image in product.images %}
       <a class="product thumbnail_view {% if forloop.first %}active{% endif %}" href="{{ image | product_img_url: 'master' }}" target="_blank">
-        <img src="{{ product.featured_image | product_img_url: 'large' }}" data-1x="{{ product.featured_image | product_img_url: 'grande' }}" data-2x="{{ product.featured_image | product_img_url: 'master' }}" alt="{{ image.alt | escape }}" />
+        <img src="{{ image | product_img_url: 'large' }}" data-1x="{{ image | product_img_url: 'grande' }}" data-2x="{{ image | product_img_url: 'master' }}" alt="{{ image.alt | escape }}" />
       </a>
     {% endfor %}
   </div>
