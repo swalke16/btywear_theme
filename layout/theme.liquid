@@ -1,5 +1,4 @@
-<!-- TODO: mobile optimized images -->
-<!-- TODO: retina image optimzations -->
+<!-- TODO: background image size messed up on narrow res (body element not containing??? -->
 <!-- TODO: 404 page styling -->
 <!-- TODO: images appear to jump on hover -->
 <!-- TODO: address listing and creation styling -->
@@ -97,13 +96,13 @@
   {{ content_for_layout }}
 
   <!-- Begin footer -->
-  <footer>
-    <div class="container">
+  <div class="container">
+    <footer>
       {% for link in linklists.footer.links %}
       <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
       {% endfor %}
-    </div>
-  </footer>
+    </footer>
+  </div>
   <!-- End footer -->
 
   {{ 'all.js' | asset_url | script_tag }}
