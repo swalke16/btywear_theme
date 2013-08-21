@@ -1,4 +1,16 @@
 /* line 8, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -64,6 +76,10 @@ h1 {
   font-weight: bold;
   color: white;
   text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6); }
+
+h1 .note {
+  font-size: 16px;
+}
 
 /* line 42, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 h2 {
@@ -742,10 +758,17 @@ input[type="password"] {
   transition: all 0.2s;
   opacity: 0.5;
   cursor: pointer;
-  font-weight: bold; }
+  font-weight: bold;
+  text-transform: uppercase;
+}
   /* line 316, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
   .button:hover {
     opacity: 1; }
+
+.button.light {
+  background: #eeeeee;
+  color: #333333;
+}
 
 /* line 319, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .add_button, .return_button {
@@ -921,22 +944,15 @@ input[type="password"] {
   position: relative;
   bottom: 5px; }
 
-/* line 447, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
-.continue_shopping {
-  background: #eeeeee;
-  color: #333333; }
-
 /* line 451, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .update_cart {
   margin: 0 20px 0 0;
-  background: #eeeeee;
-  color: #333333; }
+}
 
 /* line 456, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .checkout_button {
   margin: 0 20px 0 0;
-  background: #eeeeee;
-  color: #333333; }
+}
 
 /* line 462, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .checkout_total {
@@ -958,14 +974,6 @@ input[type="password"] {
 .content-wrapper{
   padding: 10px;
   background-color: rgba(238, 238, 238, 0.7);
-  *zoom: 1;
-}
-.content-wrapper:before, .content-wrapper:after {
-  content: " ";
-  display: table;
-}
-.content-wrapper:after {
-  clear: both;
 }
 
 #customer_account #customer_orders {
@@ -979,8 +987,51 @@ input[type="password"] {
   text-align: right;
 }
 
+#customer_order #order_payment {
+  float: left;
+}
+
+#customer_order #order_shipping {
+  float: right;
+}
+
+#customer_order #order_details {
+  margin-top: 30px;
+}
+
+#customer_addresses .address_table {
+  margin-bottom: 30px;
+}
+
+#customer_addresses .address_table h4 {
+  margin: 0 0 5px 0;
+}
+
+#customer_addresses #address_tables {
+  width: 50%;
+  float: left;
+}
+
+#customer_addresses #new_address {
+  width: 50%;
+  float: left;
+}
+
+#customer_addresses .customer_address_table td {
+  padding: 5px;
+}
+
+#customer_addresses .customer_address_table input[type=text], #customer_addresses .customer_address_table select  {
+  width: 200px;
+}
+
+#customer_addresses .customer_address_table td.label {
+  white-space: nowrap;
+}
+
+
 table {
-  width: 100%;
+  width: 200px;
 }
 
 table tr td, table tr th {
@@ -991,3 +1042,12 @@ table tr td, table tr th {
 table tr td {
   font-weight: normal;
 }
+
+table tr td.total, table tr th.total {
+  text-align: right;
+}
+
+table tr td.qty, table tr th.qty {
+  text-align: center;
+}
+

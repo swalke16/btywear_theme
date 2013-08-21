@@ -43,10 +43,10 @@
     {% endfor %}
 
     <div class="cart_footer">
-      <input type="submit" id="update-cart" class="button update_cart" name="update" value="UPDATE CART" />
-      <a class="button continue_shopping" href={{ shop.url }} title="Continue Shopping">CONTINUE SHOPPING</a>
+      <input type="submit" id="update-cart" class="button light update_cart" name="update" value="UPDATE CART" />
+      <a class="button light continue_shopping" href={{ shop.url }} title="Continue Shopping">CONTINUE SHOPPING</a>
       <h2 class="checkout_total">{{ cart.total_price | money }}</h2>
-      <input type="submit" id="checkout" class="button checkout_button" name="checkout" value="CHECKOUT" />
+      <input type="submit" id="checkout" class="button light checkout_button" name="checkout" value="CHECKOUT" />
     </div>
 
   </form>
