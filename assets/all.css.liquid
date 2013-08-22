@@ -14,39 +14,42 @@
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
-/* line 11, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 img {
   max-width: 100%;
   vertical-align: top;
   display: block; }
 
-/* line 16, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
-html, body {
+html {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  background: #111 url({{'bg.jpg' | asset_url}}) no-repeat center center fixed;
+  background-size: cover;
+  /*
+  -webkit-animation: fade-in 1s 1;
+  -moz-animation: fade-in 1s 1;
+  animation: fade-in 1s 1;
+  */
+}
 
-/* line 19, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+  html {
+    background-image: url({{'bg-2x.jpg' | asset_url}});
+} }
+
+
+body {
+  min-width: 960px;
+  min-height: 100%;
+}
+
 body {
   position: relative;
   font-family: "avenir", sans-serif;
   font-weight: bold;
   opacity: 1;
-  background: no-repeat;
-  background-color: #111111;
-  background-size: 100%;
-  background-position: 50% 0;
-  background-image: url({{'bg.jpg' | asset_url}});
-  -webkit-animation: fade-in 1s 1;
-  -moz-animation: fade-in 1s 1;
-  animation: fade-in 1s 1; }
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
-    /* line 19, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
-    body {
-      background-image: url({{'bg-2x.jpg' | asset_url}});
-      background-size: 100%; } }
-
 }
 
 @-webkit-keyframes fade-in {
@@ -274,8 +277,8 @@ header {
       color: #eeeeee; }
   /* line 70, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   .dropdown.dropdown_open {
-    padding: 18px 0;
-    height: 60px; }
+    padding: 14px 0;
+    height: 50px; }
     /* line 74, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
     .dropdown.dropdown_open a {
       opacity: 1; }

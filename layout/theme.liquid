@@ -1,5 +1,5 @@
-<!-- TODO: background image size messed up on narrow res (body element not containing??? -->
-<!-- TODO: product page styling with descriptions... looks weird for quantity to have a label but not size -->
+<!-- TODO: background image fade-in flashing, currently disabled... -->
+<!-- TODO: checkout styling -->
 <!-- TODO: 404 page styling -->
 <!-- TODO: images appear to jump on hover -->
 <!-- TODO: address listing and creation styling -->
@@ -64,11 +64,9 @@
 
   <!-- Begin header -->
   <div class="dropdown">
-    <div class="container">
-      {% for link in linklists.affiliates.links  %}
-        <a href="{{ link.url }}" title="{{ c.title }}">{{ link.title }}</a>
-      {% endfor %}
-    </div>
+    {% for link in linklists.affiliates.links  %}
+      <a href="{{ link.url }}" title="{{ c.title }}">{{ link.title }}</a>
+    {% endfor %}
   </div>
 
   <div class="container">
