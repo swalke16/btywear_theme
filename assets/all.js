@@ -77,7 +77,10 @@
 
 $(document).ready(function(){
   if ($(".login_page").length > 0) {
-    $(".sign_in").click();
+    $('.modal.login').css('display', 'block');
+    return setTimeout(function() {
+      return $('.modal.login').addClass('modal_open');
+    }, 1);
   }
 
   if ($(".register").length > 0) {
