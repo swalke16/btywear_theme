@@ -14,6 +14,7 @@
           </h4>
           <p class="address_actions">
             <span class="action_link action_edit">{{ 'Edit' | edit_customer_address_link: address.id }}</span>
+            &nbsp; | &nbsp;
             <span class="action_link action_delete">{{ 'Delete' | delete_customer_address_link: address.id }}</span>
           </p>
           <div class="view_address">
@@ -72,7 +73,7 @@
             </tr>
             <tr>
               <td class="label"></td>
-              <td class="value">{{ form.set_as_default_checkbox }} Set as Default Address?</td>
+              <td class="value"><label>{{ form.set_as_default_checkbox }} Set as Default Address?</label></td>
             </tr>
           </table>
           <div class="action_bottom">
@@ -139,7 +140,7 @@
           </tr>
           <tr>
             <td class="label"></td>
-            <td class="value">{{ form.set_as_default_checkbox }} Set as Default Address?</td>
+            <td class="value"><label>{{ form.set_as_default_checkbox }} Set as Default Address?</label></td>
           </tr>
         </table>
         <div class="action_bottom">
@@ -159,4 +160,5 @@ new Shopify.CountryProvinceSelector('address_country_new', 'address_province_new
 {% for address in customer.addresses %}
 new Shopify.CountryProvinceSelector('address_country_{{address.id}}', 'address_province_{{address.id}}', {hideElement: 'address_province_container_{{address.id}}'});
 {% endfor %}
+
 </script>
