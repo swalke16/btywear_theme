@@ -42,6 +42,13 @@
     </div>
     {% endfor %}
 
+    <div class="cart_item">
+      <p>
+        <h6>ADDITIONAL NOTES: <span class="note-subtext">(if using affiliate pickup delivery, enter affiliate name here)</span></h6>
+        <textarea name="note" id="note" rows="2" class="note">{{ cart.note }}</textarea>
+      </p>
+    </div>
+
     <div class="cart_footer">
       <input type="submit" id="update-cart" class="button light update_cart" name="update" value="UPDATE CART" />
       <a class="button light continue_shopping" href={{ shop.url }} title="Continue Shopping">CONTINUE SHOPPING</a>
@@ -55,3 +62,20 @@
 
 </section>
 
+<script type="text/javascript" charset="utf-8">
+  // save cart notes on leaving screen
+  //<![CDATA[
+  jQuery(function() {
+    jQuery(window).unload(function() {
+      var params = {
+        type: 'POST',
+        url: '/cart/update.js',
+        data: jQuery('form[action="/cart"]').serialize(),
+        dataType: 'json',
+        async: false
+      };
+      jQuery.ajax(params);
+    });
+  });
+  //]]>
+</script>
