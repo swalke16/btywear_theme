@@ -1,16 +1,16 @@
+<!doctype html>
 <!-- TODO: searching and search results styling -->
 <!-- TODO: blog styling -->
 <!-- TODO: mobile optimized site -->
 
-<!doctype html>
 <html lang="en">
 <head>
 
   <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}" type="image/png" />
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
 
-  <title>{% if template == "404" %}Page not found{% elsif template == 'index' %}{{ shop.name }}{% else %}{{ page_title }} - {{ shop.name }}{% endif %}</title>
+  <title>{% if template == "404" %}Page not found{% elsif template == 'index' %}{{ shop.name }} - Apparel For Those Driven to be Better Than Yesterday{% else %}{{ page_title }} - {{ shop.name }}{% endif %}</title>
 
   {% if page_description %}
   <meta name="description" content="{{ page_description }}" />
@@ -65,7 +65,7 @@
       {% include 'customer_links' %}
       <div class="nav_bar">
         <a href="/">
-          <h1 class="logo"></h1>
+          <h1 class="logo">{{shop.name}}</h1>
         </a>
         <nav>
           {% for link in linklists.main-menu.links %}
@@ -96,6 +96,7 @@
   <!-- End footer -->
 
   {{ 'all.js' | asset_url | script_tag }}
+  {% include 'google-remarketing' %}
 
 </body>
 </html>

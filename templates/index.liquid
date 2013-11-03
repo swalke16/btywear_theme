@@ -1,11 +1,11 @@
 <section class="home_page">
-  <h1 class="message">All Gas. No Brake.</h1>
+  <span class="message">All Gas. No Brake.</span>
 
   {% for product in collections.frontpage.products limit:2 %}
     {% include 'product-display' %}
   {% endfor %}
 
   <a class="product featured" href="/collections/new-designs">
-    <img src="{{ 'pigs.jpg' | asset_url }}" />
+    <img src="{{ 'pigs.jpg' | asset_url }}" alt="New Designs" />
   </a>
 </section>
