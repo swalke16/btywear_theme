@@ -54,8 +54,13 @@
   {% include 'register-modal' %}
 
   <!-- Begin header -->
-  <div class="dropdown">
+  <div class="dropdown affiliates">
     {% for link in linklists.affiliates.links  %}
+      <a href="{{ link.url }}" title="{{ c.title }}">{{ link.title }}</a>
+    {% endfor %}
+  </div>
+  <div class="dropdown teams">
+    {% for link in linklists.teams.links  %}
       <a href="{{ link.url }}" title="{{ c.title }}">{{ link.title }}</a>
     {% endfor %}
   </div>

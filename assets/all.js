@@ -36,7 +36,16 @@
 
     $('nav a.affiliates_link').click(function(e) {
       e.preventDefault();
-      $('.dropdown').toggleClass('dropdown_open');
+      $('nav a').removeClass('selected');
+      $('.dropdown.teams').removeClass('dropdown_open');
+      $(".dropdown.affiliates").toggleClass('dropdown_open');
+      return $(this).toggleClass('selected');
+    });
+    $('nav a.teams_link').click(function(e) {
+      e.preventDefault();
+      $('nav a').removeClass('selected');
+      $('.dropdown.affiliates').removeClass('dropdown_open');
+      $(".dropdown.teams").toggleClass('dropdown_open');
       return $(this).toggleClass('selected');
     });
 
