@@ -38,6 +38,7 @@
       e.preventDefault();
       $('nav a').removeClass('selected');
       $('.dropdown.teams').removeClass('dropdown_open');
+      $('.dropdown.events').removeClass('dropdown_open');
       $(".dropdown.affiliates").toggleClass('dropdown_open');
       return $(this).toggleClass('selected');
     });
@@ -45,7 +46,16 @@
       e.preventDefault();
       $('nav a').removeClass('selected');
       $('.dropdown.affiliates').removeClass('dropdown_open');
+      $('.dropdown.events').removeClass('dropdown_open');
       $(".dropdown.teams").toggleClass('dropdown_open');
+      return $(this).toggleClass('selected');
+    });
+    $('nav a.events_link').click(function(e) {
+      e.preventDefault();
+      $('nav a').removeClass('selected');
+      $('.dropdown.affiliates').removeClass('dropdown_open');
+      $('.dropdown.teams').removeClass('dropdown_open');
+      $(".dropdown.events").toggleClass('dropdown_open');
       return $(this).toggleClass('selected');
     });
 

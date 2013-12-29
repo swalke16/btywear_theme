@@ -1,6 +1,5 @@
 <!doctype html>
 <!-- TODO: searching and search results styling -->
-<!-- TODO: blog styling -->
 <!-- TODO: mobile optimized site -->
 
 <html lang="en">
@@ -61,6 +60,11 @@
   </div>
   <div class="dropdown teams">
     {% for link in linklists.teams.links  %}
+      <a href="{{ link.url }}" title="{{ c.title }}">{{ link.title }}</a>
+    {% endfor %}
+  </div>
+  <div class="dropdown events">
+    {% for link in linklists.events.links  %}
       <a href="{{ link.url }}" title="{{ c.title }}">{{ link.title }}</a>
     {% endfor %}
   </div>
