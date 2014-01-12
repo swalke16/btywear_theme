@@ -5,7 +5,14 @@
     {% include 'product-display' %}
   {% endfor %}
 
-  <a class="product featured" href="/collections/new-designs">
-    <img src="{{ 'pigs.jpg' | asset_url }}" alt="New Designs" />
-  </a>
+  {% if collections.new-designs.products.size > 0 %}
+    {% capture index %}{{ 'now' | date: '%S' | times: collections.new-designs.products.size | divided_by: 60 }}{% endcapture %}
+
+    {% for product in collections.new-designs.products offset:index limit:1 %}
+      <a class="product" href="/collections/new-designs">
+        <img src="{{ product.featured_image | product_img_url: 'large' }}" data-1x="{{ product.featured_image | product_img_url: 'grande' }}" data-2x="{{ product.featured_image | product_img_url: 'master' }}" alt="New Designs" />
+        <div class="product_text">New Designs</div>
+      </a>
+    {% endfor %}
+  {% endif %}
 </section>
