@@ -7,18 +7,24 @@ See the Facebook Linter: http://developers.facebook.com/tools/debug
   <meta property="og:url" content="{{ shop.url }}{{ product.url }}" />
   <meta property="og:title" content="{{ product.title }}" />
   <meta property="og:description" content="{{ product.description | newline_to_br | strip_html | truncatewords: 100, '' | escape  }}" />
-  <meta property="og:image" content="{{ product.featured_image | product_img_url: 'medium' }}" />
+  <meta property="og:image:url" content="http:{{ product.featured_image | product_img_url: 'grande' }}" />
+  <meta property="og:image:secure_url" content="https:{{ product.featured_image | product_img_url: 'grande' }}" />
 {% elsif template contains 'article' %}
   <meta property="og:url" content="{{ shop.url }}{{ article.url }}" />
   <meta property="og:title" content="{{ article.title }}" />
   <meta property="og:description" content="{{ article.excerpt_or_content | newline_to_br | strip_html | truncatewords: 100, '' | escape  }}" />
-  {% if article.content contains "<img" %}
+  {% assign img_tag = '<' | append: 'img' %}
+  {% if article.content contains img_tag %}
     {% assign src = article.content | split: 'src="' %}
-    {% assign src = src[1] | split: '"' | first | replace: '//cdn', 'http://cdn' | replace: 'http:http://', 'http://' | remove: 'https:'  %}
-    {% if src %}<meta property="og:image" content="{{ src }}" />{% endif %}
- {% endif %}
+    {% assign src = src[1] | split: '"' | first | remove: 'https:' | remove: 'http:' %}
+    {% if src %}
+      <meta property="og:image:url" content="http:{{ src }}" />
+      <meta property="og:image:secure_url" content="https:{{ src }}" />
+    {% endif %}
+  {% endif %}
 {% else %}
   {% if settings.use_logo %}
-    <meta property="og:image" content="{{ 'logo.png' | asset_url }}" />
+    <meta property="og:image:url" content="http:{{ 'logo.png' | asset_url }}" />
+    <meta property="og:image:url" content="https:{{ 'logo.png' | asset_url }}" />
   {% endif %}
 {% endif %}
