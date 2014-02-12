@@ -206,7 +206,7 @@ header {
     text-shadow: 0 -1px 0 #0d0d0d;
     font-size: 20px;
     color: rgba(238, 238, 238, 0.7);
-    margin: 0 30px 0 0;
+    margin: 0 25px 0 0;
     float: left;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
@@ -547,7 +547,7 @@ section {
 
 /* line 136, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .home_page {
-  margin: 120px auto 10px;
+  margin: 30px auto 10px;
   min-height: 0; }
 
 /* line 139, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
@@ -1120,3 +1120,334 @@ table tr td.qty, table tr th.qty {
 #blog .article p {
   margin-bottom: 20px;
 }
+
+
+
+/* HOMEPAGE STUFF */
+@-webkit-keyframes showProducts {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-moz-keyframes showProducts {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes showProducts {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.homepage-products {
+  float: left;
+  height: 0px;
+  max-width: 570px;
+  opacity: 0;
+  -webkit-animation: showProducts 2s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay: 25s;
+  -moz-animation: showProducts 2s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -moz-animation-delay: 25s;
+  animation: showProducts 2s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 25s;
+}
+
+.homepage-products .product {
+  width: 38%;
+}
+
+@-webkit-keyframes thumbFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes thumbFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes thumbFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.athlete-thumbs {
+  float: right;
+  margin-right: 10px;
+}
+
+.athlete-thumb {
+  opacity: 0;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+  -webkit-animation: thumbFadeIn 2s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: thumbFadeIn 2s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  animation: thumbFadeIn 2s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.athlete-thumb .athlete-name {
+  bottom: -12px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  font-size: 24px;
+  color: rgba(238, 238, 238, 0.7);
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+
+}
+
+.athlete-thumb:hover > .athlete-name {
+  -webkit-transform: translateY(-26px);
+  -moz-transform: translateY(-26px);
+  -ms-transform: translateY(-26px);
+  transform: translateY(-26px);
+  color: #eeeeee;
+}
+
+.athlete-thumb.one {
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+.athlete-thumb.two {
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+.athlete-thumb.three {
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+.athlete-thumb.four {
+  -webkit-animation-delay: 20s;
+  -moz-animation-delay: 20s;
+  animation-delay: 20s;
+}
+
+.athlete-thumb.five {
+  -webkit-animation-delay: 25s;
+  -moz-animation-delay: 25s;
+  animation-delay: 25s;
+}
+
+
+@-webkit-keyframes pictureFadeInOut {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  95% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes pictureFadeInOut {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  95% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pictureFadeInOut {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  95% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes hidePictures {
+  from { height: 400px; }
+  to   { height: 0px; }
+}
+
+@-moz-keyframes hidePictures {
+  from { height: 400px; }
+  to   { height: 0px; }
+}
+
+@keyframes hidePictures {
+  from { height: 400px; }
+  to   { height: 0px; }
+}
+
+.athlete-pictures {
+  float: left;
+  position: relative;
+  width: 400px;
+  height: 401px;
+  overflow: hidden;
+  -webkit-animation: hidePictures 0s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay: 25s;
+  -moz-animation: hidePictures 0s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -moz-animation-delay: 25s;
+  animation: hidePictures 0s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 25s;
+}
+
+.athlete-picture {
+  position: absolute;
+  display: block;
+  max-width: 400px;
+  max-height: 401px;
+  -webkit-animation: pictureFadeInOut 25s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation: pictureFadeInOut 25s ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  animation: pictureFadeInOut 25s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.athlete-picture .athlete-name {
+  top: 0px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  font-size: 44px;
+  color: rgba(238, 238, 238, 0.7);
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.athlete-picture.one {
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+.athlete-picture.two {
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+.athlete-picture.three {
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+.athlete-picture.four {
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+.athlete-picture.five {
+  -webkit-animation-delay: 20s;
+  -moz-animation-delay: 20s;
+  animation-delay: 20s;
+}
+
+
