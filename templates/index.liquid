@@ -55,17 +55,14 @@
     </a>
   </div>
 
-  <div class="homepage-products">
+  <div class="homepage-products clearfix">
 
     <span class="message">Games Ready</span>
 
-    <div class="clearfix">
-      {% for product in collections.frontpage.products limit:2 %}
+      {% for product in collections.frontpage.products limit:3 %}
         {% include 'product-display' %}
       {% endfor %}
-    </div>
 
-    <div class="clearfix">
       {% if collections.new-designs.products.size > 0 %}
         {% capture index %}{{ 'now' | date: '%S' | times: collections.new-designs.products.size | divided_by: 60 }}{% endcapture %}
 
@@ -76,7 +73,6 @@
           </a>
         {% endfor %}
       {% endif %}
-    </div>
 
   </div>
 </section>
