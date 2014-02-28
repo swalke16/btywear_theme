@@ -44,7 +44,16 @@
 
     <div class="cart_item">
       <p>
-        <h6>ADDITIONAL NOTES: <span class="note-subtext">(if using affiliate pickup delivery, enter affiliate name here)</span></h6>
+        <h6> PICKUP AFFILIATE: <span class="note-subtext">(if you want to have your order delivered to a local affiliate select affiliate name here, and choose 'Affiliate Pickup' for your shipping method during checkout.)</span> </h6>
+        <select id="pickup_affiliate" name="attributes[pickup_affiliate]">
+          <option></option>
+          <option value="CrossFit Future" {% if cart.attributes.pickup_affiliate == "CrossFit Future" %} selected="selected" {% endif %}>CrossFit Future</option>
+          <option value="CrossFit New Albany" {% if cart.attributes.pickup_affiliate == "CrossFit New Albany" %} selected="selected" {% endif %}>CrossFit New Albany</option>
+          <option value="CrossFit Olentangy" {% if cart.attributes.pickup_affiliate == "CrossFit Olentangy" %} selected="selected" {% endif %}>CrossFit Olentangy</option>
+        </select>
+      </p>
+      <p>
+        <h6>ADDITIONAL NOTES:</h6>
         <textarea name="note" id="note" rows="2" class="note">{{ cart.note }}</textarea>
       </p>
     </div>
@@ -66,6 +75,12 @@
   // save cart notes on leaving screen
   //<![CDATA[
   jQuery(function() {
+    jQuery("#pickup_affiliate").select2({
+      width: "300px",
+      placeholder: "Select an affiliate for pickup...",
+      allowClear: true
+    });
+
     jQuery(window).unload(function() {
       var params = {
         type: 'POST',
