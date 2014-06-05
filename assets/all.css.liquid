@@ -517,7 +517,6 @@ section {
   -webkit-animation: enter 1s 1;
   -moz-animation: enter 1s 1;
   animation: enter 1s 1;
-  font-size: 80px;
   opacity: 1;
 }
 
@@ -548,7 +547,7 @@ section {
 /* line 136, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .home_page {
   margin: 30px auto 10px;
-  min-height: 550px;
+  min-height: 600px;
   overflow: hidden;
   position: relative;
 }
@@ -1127,55 +1126,19 @@ table tr td.qty, table tr th.qty {
 
 
 /* HOMEPAGE STUFF */
-@-webkit-keyframes showProducts {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@-moz-keyframes showProducts {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes showProducts {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
 .homepage-products {
   position: absolute;
   top: 0;
   left: 0;
   max-width: 570px;
-  opacity: 0;
-  -webkit-animation: showProducts 2s ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-delay: 14s;
-  -moz-animation: showProducts 2s ease-in-out;
-  -moz-animation-fill-mode: forwards;
-  -moz-animation-delay: 14s;
-  animation: showProducts 2s ease-in-out;
-  animation-fill-mode: forwards;
-  animation-delay: 14s;
 }
 
 .homepage-products .product {
   width: 38%;
 }
 
-@-webkit-keyframes thumbFadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@-moz-keyframes thumbFadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes thumbFadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+.athlete-thumbs-container {
+  float: right;
 }
 
 .athlete-thumbs {
@@ -1184,7 +1147,6 @@ table tr td.qty, table tr th.qty {
 }
 
 .athlete-thumb {
-  opacity: 0;
   display: block;
   position: relative;
   overflow: hidden;
@@ -1193,13 +1155,6 @@ table tr td.qty, table tr th.qty {
   margin-bottom: 10px;
   border: 5px solid rgba(238, 238, 238, 0.7);
   border-radius: 1px;
-
-  -webkit-animation: thumbFadeIn 2s ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation: thumbFadeIn 2s ease-in-out;
-  -moz-animation-fill-mode: forwards;
-  animation: thumbFadeIn 2s ease-in-out;
-  animation-fill-mode: forwards;
 }
 
 .athlete-thumb .athlete-name {
@@ -1223,151 +1178,6 @@ table tr td.qty, table tr th.qty {
   color: #eeeeee;
 }
 
-.athlete-thumb.one {
-  -webkit-animation-delay: 2s;
-  -moz-animation-delay: 2s;
-  animation-delay: 2s;
-}
-
-.athlete-thumb.two {
-  -webkit-animation-delay: 5s;
-  -moz-animation-delay: 5s;
-  animation-delay: 5s;
-}
-
-.athlete-thumb.three {
-  -webkit-animation-delay: 8s;
-  -moz-animation-delay: 8s;
-  animation-delay: 8s;
-}
-
-.athlete-thumb.four {
-  -webkit-animation-delay: 11s;
-  -moz-animation-delay: 11s;
-  animation-delay: 11s;
-}
-
-.athlete-thumb.five {
-  -webkit-animation-delay: 14s;
-  -moz-animation-delay: 14s;
-  animation-delay: 14s;
-}
-
-
-@-webkit-keyframes pictureFadeInOut {
-  0% {
-    opacity: 1;
-  }
-
-  13% {
-    opacity: 1;
-  }
-
-  20% {
-    opacity: 0;
-  }
-
-  94% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@-moz-keyframes pictureFadeInOut {
-  0% {
-    opacity: 1;
-  }
-
-  13% {
-    opacity: 1;
-  }
-
-  20% {
-    opacity: 0;
-  }
-
-  94% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes pictureFadeInOut {
-  0% {
-    opacity: 1;
-  }
-
-  13% {
-    opacity: 1;
-  }
-
-  20% {
-    opacity: 0;
-  }
-
-  94% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes hidePictures {
-  from { opacity: 1; }
-  to   { opacity: 0; }
-}
-
-@-moz-keyframes hidePictures {
-  from { opacity: 1; }
-  to   { opacity: 0; }
-}
-
-@keyframes hidePictures {
-  from { opacity: 1; }
-  to   { opacity: 0; }
-}
-
-.athlete-pictures {
-  float: left;
-  position: relative;
-  width: 400px;
-  height: 401px;
-  overflow: hidden;
-  -webkit-animation: hidePictures 0s ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-delay: 14s;
-  -moz-animation: hidePictures 0s ease-in-out;
-  -moz-animation-fill-mode: forwards;
-  -moz-animation-delay: 14s;
-  animation: hidePictures 0s ease-in-out;
-  animation-fill-mode: forwards;
-  animation-delay: 14s;
-}
-
-.athlete-picture {
-  position: absolute;
-  display: block;
-  max-width: 400px;
-  max-height: 401px;
-  border: 5px solid rgba(238, 238, 238, 0.7);
-  border-radius: 1px;
-
-  -webkit-animation: pictureFadeInOut 15s ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation: pictureFadeInOut 15s ease-in-out;
-  -moz-animation-fill-mode: forwards;
-  animation: pictureFadeInOut 15s ease-in-out;
-  animation-fill-mode: forwards;
-}
-
 .athlete-picture .athlete-name {
   top: 0px;
   position: absolute;
@@ -1378,34 +1188,12 @@ table tr td.qty, table tr th.qty {
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-.athlete-picture.one {
-  -webkit-animation-delay: 0s;
-  -moz-animation-delay: 0s;
-  animation-delay: 0s;
+.athlete-title {
+  margin: 0;
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6);
 }
-
-.athlete-picture.two {
-  -webkit-animation-delay: 3s;
-  -moz-animation-delay: 3s;
-  animation-delay: 3s;
-}
-
-.athlete-picture.three {
-  -webkit-animation-delay: 6s;
-  -moz-animation-delay: 6s;
-  animation-delay: 6s;
-}
-
-.athlete-picture.four {
-  -webkit-animation-delay: 9s;
-  -moz-animation-delay: 9s;
-  animation-delay: 9s;
-}
-
-.athlete-picture.five {
-  -webkit-animation-delay: 12s;
-  -moz-animation-delay: 12s;
-  animation-delay: 12s;
-}
-
 

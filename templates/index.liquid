@@ -1,76 +1,46 @@
 <section class="home_page">
-  <div class="athlete-pictures">
-    <a href="pages/athletes" class="athlete-picture five">
-      <img src="{{ 'ron-thomas.jpg' | asset_url }}" data-1x="{{ 'ron-thomas.jpg' | asset_url }}" data-2x="{{ 'ron-thomas-2x.jpg' | asset_url }}" alt="Ron Thomas" />
-      <div class="athlete-name">Ron Thomas</div>
-    </a>
+  <div class="athlete-thumbs-container">
+    <span class="athlete-title">BTY Athletes</span>
 
-    <a href="pages/athletes" class="athlete-picture four">
-      <img src="{{ 'nikki-ralston-2.jpg' | asset_url }}" data-1x="{{ 'nikki-ralston-2.jpg' | asset_url }}" data-2x="{{ 'nikki-ralston-2-2x.jpg' | asset_url }}" alt="Nikki Ralston" />
-      <div class="athlete-name">Nikki Ralston</div>
-    </a>
+    <div class="athlete-thumbs">
+      <a href="pages/athletes" class="athlete-thumb four">
+        <img src="{{ 'nikki-ralston-2.jpg' | asset_url }}" data-1x="{{ 'nikki-ralston-2.jpg' | asset_url }}" data-2x="{{ 'nikki-ralston-2-2x.jpg' | asset_url }}" alt="Nikki Ralston" />
+        <div class="athlete-name">Nikki Ralston</div>
+      </a>
 
-    <a href="pages/athletes" class="athlete-picture three">
-      <img src="{{ 'tristan-moore.jpg' | asset_url }}" data-1x="{{ 'tristan-moore.jpg' | asset_url }}" data-2x="{{ 'tristan-moore-2x.jpg' | asset_url }}" alt="Tristan Moore" />
-      <div class="athlete-name">Tristan Moore</div>
-    </a>
+      <a href="pages/athletes" class="athlete-thumb five">
+        <img src="{{ 'ron-thomas.jpg' | asset_url }}" data-1x="{{ 'ron-thomas.jpg' | asset_url }}" data-2x="{{ 'ron-thomas-2x.jpg' | asset_url }}" alt="Ron Thomas" />
+        <div class="athlete-name">Ron Thomas</div>
+      </a>
+    </div>
 
-    <a href="pages/athletes" class="athlete-picture two">
-      <img src="{{ 'jenny-borda.jpg' | asset_url }}" data-1x="{{ 'jenny-borda.jpg' | asset_url }}" data-2x="{{ 'jenny-borda-2x.jpg' | asset_url }}" alt="Jenny Borda" />
-      <div class="athlete-name">Jenny Borda</div>
-    </a>
+    <div class="athlete-thumbs">
+      <a href="pages/athletes" class="athlete-thumb one">
+        <img src="{{ 'chris-sansbury.jpg' | asset_url }}" data-1x="{{ 'chris-sansbury.jpg' | asset_url }}" data-2x="{{ 'chris-sansbury-2x.jpg' | asset_url }}" alt="Chris Sansbury" />
+        <div class="athlete-name">Chris Sansbury</div>
+      </a>
 
-    <a href="pages/athletes" class="athlete-picture one">
-      <img src="{{ 'chris-sansbury.jpg' | asset_url }}" data-1x="{{ 'chris-sansbury.jpg' | asset_url }}" data-2x="{{ 'chris-sansbury-2x.jpg' | asset_url }}" alt="Chris Sansbury" />
-      <div class="athlete-name">Chris Sansbury</div>
-    </a>
-  </div>
+      <a href="pages/athletes" class="athlete-thumb two">
+        <img src="{{ 'jenny-borda.jpg' | asset_url }}" data-1x="{{ 'jenny-borda.jpg' | asset_url }}" data-2x="{{ 'jenny-borda-2x.jpg' | asset_url }}" alt="Jenny Borda" />
+        <div class="athlete-name">Jenny Borda</div>
+      </a>
 
-  <div class="athlete-thumbs">
-    <a href="pages/athletes" class="athlete-thumb four">
-      <img src="{{ 'nikki-ralston-2.jpg' | asset_url }}" data-1x="{{ 'nikki-ralston-2.jpg' | asset_url }}" data-2x="{{ 'nikki-ralston-2-2x.jpg' | asset_url }}" alt="Nikki Ralston" />
-      <div class="athlete-name">Nikki Ralston</div>
-    </a>
-
-    <a href="pages/athletes" class="athlete-thumb five">
-      <img src="{{ 'ron-thomas.jpg' | asset_url }}" data-1x="{{ 'ron-thomas.jpg' | asset_url }}" data-2x="{{ 'ron-thomas-2x.jpg' | asset_url }}" alt="Ron Thomas" />
-      <div class="athlete-name">Ron Thomas</div>
-    </a>
-  </div>
-
-  <div class="athlete-thumbs">
-    <a href="pages/athletes" class="athlete-thumb one">
-      <img src="{{ 'chris-sansbury.jpg' | asset_url }}" data-1x="{{ 'chris-sansbury.jpg' | asset_url }}" data-2x="{{ 'chris-sansbury-2x.jpg' | asset_url }}" alt="Chris Sansbury" />
-      <div class="athlete-name">Chris Sansbury</div>
-    </a>
-
-    <a href="pages/athletes" class="athlete-thumb two">
-      <img src="{{ 'jenny-borda.jpg' | asset_url }}" data-1x="{{ 'jenny-borda.jpg' | asset_url }}" data-2x="{{ 'jenny-borda-2x.jpg' | asset_url }}" alt="Jenny Borda" />
-      <div class="athlete-name">Jenny Borda</div>
-    </a>
-
-    <a href="pages/athletes" class="athlete-thumb three">
-      <img src="{{ 'tristan-moore.jpg' | asset_url }}" data-1x="{{ 'tristan-moore.jpg' | asset_url }}" data-2x="{{ 'tristan-moore-2x.jpg' | asset_url }}" alt="Tristan Moore" />
-      <div class="athlete-name">Tristan Moore</div>
-    </a>
+      <a href="pages/athletes" class="athlete-thumb three">
+        <img src="{{ 'tristan-moore.jpg' | asset_url }}" data-1x="{{ 'tristan-moore.jpg' | asset_url }}" data-2x="{{ 'tristan-moore-2x.jpg' | asset_url }}" alt="Tristan Moore" />
+        <div class="athlete-name">Tristan Moore</div>
+      </a>
+    </div>
   </div>
 
   <div class="homepage-products clearfix">
 
-    <span class="message">Games Ready</span>
-
-      {% for product in collections.frontpage.products limit:3 %}
-        {% include 'product-display' %}
-      {% endfor %}
+    <span class="message">Better Than Yesterday</span>
 
       {% if collections.new-designs.products.size > 0 %}
         {% capture index %}{{ 'now' | date: '%S' | times: collections.new-designs.products.size | divided_by: 60 }}{% endcapture %}
 
-        {% for product in collections.new-designs.products offset:index limit:1 %}
-          <a class="product" href="/collections/new-designs">
-            <img src="{{ product.featured_image | product_img_url: 'large' }}" data-1x="{{ product.featured_image | product_img_url: 'grande' }}" data-2x="{{ product.featured_image | product_img_url: 'master' }}" alt="New Designs" />
-            <div class="product_text">New Designs</div>
-          </a>
+        {% for product in collections.new-designs.products offset:index limit:4 %}
+          {% include 'product-display' %}
         {% endfor %}
       {% endif %}
 
