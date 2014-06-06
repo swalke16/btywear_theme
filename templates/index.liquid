@@ -37,9 +37,7 @@
     <span class="message">Better Than Yesterday</span>
 
       {% if collections.new-designs.products.size > 0 %}
-        {% capture index %}{{ 'now' | date: '%S' | times: collections.new-designs.products.size | divided_by: 60 }}{% endcapture %}
-
-        {% for product in collections.new-designs.products offset:index limit:4 %}
+        {% for product in collections.new-designs.products %}
           {% include 'product-display' %}
         {% endfor %}
       {% endif %}

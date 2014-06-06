@@ -107,3 +107,7 @@ $(document).ready(function(){
   }
 });
 
+jQuery(function(){
+  jQuery(".homepage-products .product").pick(4);
+});
+
