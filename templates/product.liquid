@@ -1,53 +1,57 @@
 <section class="item_page">
-  <div class="product full_view">
-    <img src="{{ product.featured_image | product_img_url: 'large' }}" data-1x="{{ product.featured_image | product_img_url: 'grande' }}" data-2x="{{ product.featured_image | product_img_url: 'master' }}" alt="{{ product.title | escape  }}" />
-    <div class="full_view_price">{{ include 'product-price' }}</div>
-  </div>
+  <div itemscope itemtype="http://data-vocabulary.org/Product">
+    <div class="product full_view">
+      <img itemprop="image" src="{{ product.featured_image | product_img_url: 'large' }}" data-1x="{{ product.featured_image | product_img_url: 'grande' }}" data-2x="{{ product.featured_image | product_img_url: 'master' }}" alt="{{ product.title | escape  }}" />
+      <div itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
+        <div class="full_view_price">{{ include 'product-price' }}</div>
+        <span itemprop="price" style="display:none;">{{ product.price | money_without_currency }}</span>
+      </div>
+    </div>
 
-  <div class="thumbnails">
-    {% for image in product.images %}
-      <a class="product thumbnail_view {% if forloop.first %}active{% endif %}" href="{{ image | product_img_url: 'master' }}" target="_blank">
-        <img src="{{ image | product_img_url: 'large' }}" data-1x="{{ image | product_img_url: 'grande' }}" data-2x="{{ image | product_img_url: 'master' }}" alt="{{ image.alt | escape }}" />
-      </a>
-    {% endfor %}
-  </div>
+    <div class="thumbnails">
+      {% for image in product.images %}
+        <a class="product thumbnail_view {% if forloop.first %}active{% endif %}" href="{{ image | product_img_url: 'master' }}" target="_blank">
+          <img src="{{ image | product_img_url: 'large' }}" data-1x="{{ image | product_img_url: 'grande' }}" data-2x="{{ image | product_img_url: 'master' }}" alt="{{ image.alt | escape }}" />
+        </a>
+      {% endfor %}
+    </div>
 
-  <div class="item_details">
-    <h2>{{ product.title }}</h2>
-    <p> {{ product.description }} </p>
+    <div class="item_details">
+      <h2 itemprop="name">{{ product.title }}</h2>
+      <p itemprop="description"> {{ product.description }} </p>
 
-    <form id="add-item-form" action="/cart/add" method="post" class="variants">
-      <!-- Begin product options -->
-      <div class="options">
+      <form id="add-item-form" action="/cart/add" method="post" class="variants">
+        <!-- Begin product options -->
+        <div class="options">
 
-        <div class="select clearfix">
-          <select id="product-select" name="id">
-            {% for variant in product.variants %}
-            <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money | replace: '.00', '' }}</option>
-            {% endfor %}
-          </select>
+          <div class="select clearfix">
+            <select id="product-select" name="id">
+              {% for variant in product.variants %}
+              <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money | replace: '.00', '' }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <h6>QUANTITY</h6>
+          <input type="text" class="quantity" name="search" value="1" />
         </div>
 
-        <h6>QUANTITY</h6>
-        <input type="text" class="quantity" name="search" value="1" />
-      </div>
+        {% unless product.available %}
+        <p>Sold Out</p>
+        {% else %}
+        <input type="submit" id="add-to-cart" class="button add_button" name="add" value="ADD TO CART" />
+        {% endunless %}
 
-      {% unless product.available %}
-      <p>Sold Out</p>
-      {% else %}
-      <input type="submit" id="add-to-cart" class="button add_button" name="add" value="ADD TO CART" />
-      {% endunless %}
+        <!-- TODO: is there a better way to get the page to return to? goes to frontpage sometimes -->
+        {% for collection in product.collections limit:2 %}
+           {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+        {% endfor %}
+        <a class="button return_button" href="{{ url }}">RETURN TO LIST</a>
 
-      <!-- TODO: is there a better way to get the page to return to? goes to frontpage sometimes -->
-      {% for collection in product.collections limit:2 %}
-         {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
-      {% endfor %}
-      <a class="button return_button" href="{{ url }}">RETURN TO LIST</a>
+      </form>
 
-    </form>
-
+    </div>
   </div>
-
 </section>
 
 <script type="text/javascript">
