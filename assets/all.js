@@ -34,31 +34,6 @@
       }, 300);
     });
 
-    $('nav a.affiliates_link').click(function(e) {
-      e.preventDefault();
-      $('nav a').removeClass('selected');
-      $('.dropdown.teams').removeClass('dropdown_open');
-      $('.dropdown.events').removeClass('dropdown_open');
-      $(".dropdown.affiliates").toggleClass('dropdown_open');
-      return $(this).toggleClass('selected');
-    });
-    $('nav a.teams_link').click(function(e) {
-      e.preventDefault();
-      $('nav a').removeClass('selected');
-      $('.dropdown.affiliates').removeClass('dropdown_open');
-      $('.dropdown.events').removeClass('dropdown_open');
-      $(".dropdown.teams").toggleClass('dropdown_open');
-      return $(this).toggleClass('selected');
-    });
-    $('nav a.events_link').click(function(e) {
-      e.preventDefault();
-      $('nav a').removeClass('selected');
-      $('.dropdown.affiliates').removeClass('dropdown_open');
-      $('.dropdown.teams').removeClass('dropdown_open');
-      $(".dropdown.events").toggleClass('dropdown_open');
-      return $(this).toggleClass('selected');
-    });
-
     if ($('.total').text() === "0") {
       $(".checkout").css('display', 'none');
     }
@@ -108,6 +83,6 @@ $(document).ready(function(){
 });
 
 jQuery(function(){
-  jQuery(".homepage-products .product").pick(4);
+  jQuery(".homepage-products .product").pick(6);
 });
 
