@@ -1,6 +1,6 @@
 <section class="product_page">
 
-  {% for product in collection.products %}
+  {% for product in collection.products reversed %}
     {% include 'product-display' %}
   {% endfor %}
 
