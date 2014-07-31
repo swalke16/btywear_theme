@@ -84,5 +84,20 @@ $(document).ready(function(){
 
 jQuery(function(){
   jQuery(".homepage-products .product").pick(6);
+
+  jQuery.vegas('slideshow', {
+    delay: 10000,
+    backgrounds: [
+      { src: '{{"bg-2x.jpg" | asset_url}}', fade: 1000 },
+      { src: '{{"bg-1.jpg" | asset_url}}', fade: 1000 },
+      { src: '{{"bg-2.jpg" | asset_url}}', fade: 1000 },
+      { src: '{{"bg-3.jpg" | asset_url}}', fade: 1000 },
+      { src: '{{"bg-4.jpg" | asset_url}}', fade: 1000 },
+      { src: '{{"bg-5.jpg" | asset_url}}', fade: 1000 },
+      { src: '{{"bg-6.jpg" | asset_url}}', fade: 1000 },
+      { src: '{{"bg-7.jpg" | asset_url}}', fade: 1000 },
+      { src: '{{"bg-8.jpg" | asset_url}}', fade: 1000 }
+    ]
+  })('overlay');
 });
 

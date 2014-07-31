@@ -24,6 +24,7 @@
   {{ 'normalize.css' | asset_url | stylesheet_tag }}
   {{ 'all.css' | asset_url | stylesheet_tag }}
   {{ 'select2.css' | asset_url | stylesheet_tag }}
+  {{ 'jquery.vegas.css' | asset_url | stylesheet_tag }}
 
   {{ content_for_header }}
 
@@ -34,6 +35,7 @@
   {{ 'select2.js' | asset_url | script_tag }}
   {{ 'hisrc.js' | asset_url | script_tag }}
   {{ 'jquery.pick.js' | asset_url | script_tag }}
+  {{ 'jquery.vegas.js' | asset_url | script_tag }}
 
   {% if template contains 'customers' %}
   {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
@@ -91,16 +93,14 @@
   {{ content_for_layout }}
 
   <!-- Begin footer -->
-  <div class="container">
-    <footer>
-      {% for link in linklists.footer.links %}
-      <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
-      {% endfor %}
-      <div class="social">
-        <a href="https://www.facebook.com/BtyWear" target="_blank" alt="Facebook">Facebook</a>
-        <a href="https://www.twitter.com/BtyWear" target="_blank" alt="Twitter">Twitter</a>
-      </div>
-    </footer>
+  <div class="footer">
+    {% for link in linklists.footer.links %}
+    <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+    {% endfor %}
+  </div>
+  <div class="footer social">
+    <a href="https://www.facebook.com/BtyWear" target="_blank" alt="Facebook">Facebook</a>
+    <a href="https://www.twitter.com/BtyWear" target="_blank" alt="Twitter">Twitter</a>
   </div>
   <!-- End footer -->
 
