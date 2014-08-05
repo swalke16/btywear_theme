@@ -69,6 +69,7 @@
 
 }).call(this);
 
+
 $(document).ready(function(){
   if ($(".login_page").length > 0) {
     $('.modal.login').css('display', 'block');
@@ -82,11 +83,12 @@ $(document).ready(function(){
   }
 });
 
-jQuery(function(){
-  jQuery(".homepage-products .product").pick(6);
+$(function(){
+  $(".homepage-products .product").pick(6);
 
-  jQuery.vegas('slideshow', {
+  $.vegas('slideshow', {
     delay: 10000,
+    step: $.cookie('slideShowStep', Number) || 0,
     backgrounds: [
       { src: '{{"bg-2x.jpg" | asset_url}}', fade: 1000 },
       { src: '{{"bg-1.jpg" | asset_url}}', fade: 1000 },
@@ -99,5 +101,11 @@ jQuery(function(){
       { src: '{{"bg-8.jpg" | asset_url}}', fade: 1000 }
     ]
   })('overlay');
+
+  // bind to vegas slide change to save cookie to preserve slide position on page load...
+  $('body').bind('vegaswalk', function(e, bg, step) {
+      $.cookie('slideShowStep', step, { path: '/' });
+    }
+  );
 });
 
