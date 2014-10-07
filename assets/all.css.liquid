@@ -554,11 +554,11 @@ section {
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
   max-width: 220px;
   max-height: 188px;
+  overflow: hidden;
   margin: 0 3% 30px 0;
   float: left;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
   display: block;
-  overflow: hidden;
   border: 5px solid rgba(238, 238, 238, 0.7);
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -567,22 +567,21 @@ section {
   /* line 153, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
   .product:hover {
     opacity: 1; }
-  /* line 156, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
-  .product:hover > .product_text {
-    -webkit-transform: translateY(-26px);
-    -moz-transform: translateY(-26px);
-    -ms-transform: translateY(-26px);
-    -o-transform: translateY(-26px);
-    transform: translateY(-26px);
-    color: #eeeeee; }
   /* line 160, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
   .product:hover > .price {
     -webkit-transform: translateX(0px);
     -moz-transform: translateX(0px);
     -ms-transform: translateX(0px);
-    -o-transform: translateX(0px);
     transform: translateX(0px);
-    color: #eeeeee; }
+    color: #eee;
+  }
+  .product:hover > .product_text {
+    color: white;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+  }
   /* line 164, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
   .product.featured {
     width: 44%;
@@ -594,31 +593,35 @@ section {
 
 /* line 169, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .price {
-  color: rgba(238, 238, 238, 0.7);
+  color: rgba(238,238,238, 0.7);
   position: absolute;
   top: 10px;
   left: 14px;
   -webkit-transform: translateX(-50px);
   -moz-transform: translateX(-50px);
   -ms-transform: translateX(-50px);
-  -o-transform: translateX(-50px);
   transform: translateX(-50px);
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  transition: all 0.2s; }
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  transition: all 0.6s; }
 
 /* line 177, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .product_text {
   position: absolute;
-  bottom: -12px;
   left: 0;
+  bottom: 0;
   width: 100%;
   text-align: center;
-  font-size: 24px;
+  font-size: 14px;
+  background-color: #333;
   color: rgba(238, 238, 238, 0.7);
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  transition: all 0.2s; }
+  -webkit-transform: translateY(100px);
+  -moz-transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  transform: translateY(100px);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s; }
 
 /* line 187, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .footer {
@@ -667,17 +670,16 @@ section {
 
 /* line 212, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .product_page {
-  width: 96%;
-  max-width: 960px;
   margin: 30px auto 10px; }
   /* line 217, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
   .product_page .product {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
     margin-bottom: 20px;
-    width: 22%;
-    margin: 0 4% 30px 0; }
+    width: auto;
+    float: none;
+    margin: 0 6% 30px 0; }
     /* line 223, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
-    .product_page .product:nth-child(4n+5) {
+    .product_page .products tr td:nth-child(4n) a {
       margin-right: 0; }
 
 /* line 228, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
