@@ -1,0 +1,93 @@
+<section class="request-quote">
+
+    <h1>{{ page.title }}</h1>
+
+    <div class="content-wrapper">
+      {{ page.content }}
+
+      <p class="descriptive-text">
+        We offer high quality apparel custom designed for your affiliate. Reserve your spot in time for regionals, before they fill up! Orders ship an average of four weeks from design approval.
+      </p>
+
+      {% form 'contact' %}
+      {% if form.posted_successfully? %}
+      <div class="successForm feedback">
+        <p>Thanks for contacting us! We'll get back to you as soon as possible.</p>
+      </div>
+      {% endif %}
+
+      {% if form.errors %}
+      <div class="errorForm feedback">
+        <p>Oops, sorry. We were unable to submit your inquiry because it contained {{ form.errors | size | pluralize: 'an error', 'a few errors' }}. Please correct the following and submit again:</p>
+        {% for field in form.errors %}
+          <p>The {{ field | capitalize | replace: 'Body', 'Message' }} field {{ form.errors.messages[field] }}.</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <div id="contactFormWrapper">
+        <p>
+          <label>Your Name:</label><br/>
+          <input type="text" id="contactFormName" name="contact[name]" placeholder="John Doe" value="{{form.name}}" />
+        </p>
+        <p>
+          <label>Affiliate Name:</label><br/>
+          <input type="text" name="contact[affiliate name]" placeholder="My Gym Name"/>
+        </p>
+        <p>
+          <label>Email:</label><br/>
+          <input type="email" id="contactFormEmail" name="contact[email]" placeholder="john@example.com" value="{{form.email}}" class="{% if form.errors.messages['email'] %}error{% endif %}" />
+        </p>
+        <p>
+          <label>Phone Number:</label><br/>
+          <input type="telephone" id="contactFormTelephone" name="contact[phone]" placeholder="555-555-1234" value="{{form.phone}}" />
+        </p>
+        <p>
+          <label>Products you are interested in:</label><br/>
+          <input type="hidden" name="contact[product shirts]" value="No" />
+          <input type="checkbox" name="contact[product shirts]" value="Yes" />Shirts
+          <input type="text" name="contact[product shirts quantity]" value="" placeholder="Qty" class="quantity" />
+        </p>
+        <p>
+          <input type="hidden" name="contact[product tanks]" value="No" />
+          <input type="checkbox" name="contact[product tanks]" value="Yes" />Tanks
+          <input type="text" name="contact[product tanks quantity]" value="" placeholder="Qty" class="quantity" />
+        </p>
+        <p>
+          <input type="hidden" name="contact[product shorts]" value="No" />
+          <input type="checkbox" name="contact[product shorts]" value="Yes" />Shorts
+          <input type="text" name="contact[product shorts quantity]" value="" placeholder="Qty" class="quantity" />
+        </p>
+        <p>
+          <input type="hidden" name="contact[product capris]" value="No" />
+          <input type="checkbox" name="contact[product capris]" value="Yes" />Capris
+          <input type="text" name="contact[product capris quantity]" value="" placeholder="Qty" class="quantity" />
+        </p>
+        <p>
+          <input type="hidden" name="contact[product headbands]" value="No" />
+          <input type="checkbox" name="contact[product headbands]" value="Yes" />Headbands
+          <input type="text" name="contact[product headbands quantity]" value="" placeholder="Qty" class="quantity" />
+        </p>
+        <p>
+          <label>Message:</label><br/>
+          <textarea rows="5" cols="70" id="contactFormMessage" name="contact[body]" placeholder="Your Message" class="{% if form.errors.messages['message'] %}error{% endif %}">{{form.body}}</textarea>
+        </p>
+        <p class="affiliate-interest">
+          Tired of the hassle of managing inventory and collecting payments for your gear? Join our free affiliate program to have your gear featured for sale on our site!
+        </p>
+        <p>
+          <label>Interested in becoming a BTY Affiliate?</label>
+          <br/>
+          <input type="radio" name="contact[affilate interest]" value="No" checked />No<br>
+          <input type="radio" name="contact[affiliate interest]" value="Yes" />Yes
+        </p>
+        <p>
+          <input type="submit" id="contactFormSubmit" value="Send" class="button dark" />
+        </p>
+      </div>
+      {% endform %}
+    </div>
+
+</section>
+
+
