@@ -1,21 +1,32 @@
 <section class="home_page">
-  <div class="homepage-products clearfix">
 
-    <span class="message">Better Than Yesterday</span>
+  <span class="message"><span class="highlight">Better</span> Than Yesterday</span>
+  <p class="value-proposition">High quality apparel for those devoted to living life to the fullest.</p>
 
+  <div class="homepage-feature content-wrapper clearfix homepage-news-and-updates">
+    <p class="feature-title"> News &amp; Updates</p>
+    <a class="feature-image" href="http://btywear.com/products/mens-buzz-saw-phx-shirt"><img src="{{ 'phoenix-logo-shirt.jpg' | asset_url }}" alt="Phoenix Logo Shirt" /></a>
+
+    <h3>2015 CrossFit Games Regional Gear</h3>
+    <p class="feature-text">
+      Games season is coming soon! With the newly combined regionals it's going to be harder than ever to stand out.
+      <br/><br/>
+      We can help your athletes get in the spirit of the games and show their affiliate pride by providing you with
+      custom designed gear. 
+      <br/><br/>
+      We expect spots to fill-up fast so <a href="{{pages.request-a-quote.url}}">reserve your spot</a> today!
+    </p>
+  </div>
+
+  <div class="homepage-feature content-wrapper">
+    <p class="feature-title"> Featured Products </p>
+    <div class="homepage-products">
       {% if collections.new-designs.products.size > 0 %}
         {% for product in collections.new-designs.products %}
           {% include 'product-display' %}
         {% endfor %}
       {% endif %}
-
+    </div>
   </div>
 
-  <div class="homepage-feature">
-    <span class="message" style="text-align: center;">New Designs!</span>
-
-    <a href="http://btywear.com/products/mens-buzz-saw-phx-shirt"><img src="{{ 'phoenix-logo-shirt.jpg' | asset_url }}" alt="Phoenix Logo Shirt" /></a>
-    <br/>
-    <p class="content-wrapper">Get your hands on the first in a series of new designs that are coming soon. Available in <a href="http://btywear.com/products/mens-buzz-saw-phx-shirt">men's</a> or <a href="http://btywear.com/products/womens-buzz-saw-phx-shirt">women's</a> Rise to the occasion and live BTY!</p>
-  </div>
 </section>
